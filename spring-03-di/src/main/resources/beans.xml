@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+    <bean id="address" class="com.lisery.pojo.Address">
+        <property name="address" value="house"/>
+    </bean>
+
+    <bean id="student" class="com.lisery.pojo.Student">
+        <!--普通值注入,value-->
+        <property name="name" value="lisery"/>
+        <!--bean注入,ref-->
+        <property name="address" ref="address"/>
+        <!--数组注入-->
+        <property name="books">
+            <array>
+                <value>clean code</value>
+                <value>design pattern</value>
+            </array>
+        </property>
+        <!--list-->
+        <property name="hobbies">
+            <list>
+                <value>paint</value>
+                <value>game</value>
+            </list>
+        </property>
+        <!--map-->
+        <property name="card">
+            <map>
+                <entry key="id_card" value="1233157326"/>
+                <entry key="bank_card" value="894375t90"/>
+            </map>
+        </property>
+        <!--set-->
+        <property name="games">
+            <set>
+                <value>issac</value>
+                <value>arcaea</value>
+            </set>
+        </property>
+        <!--null-->
+        <property name="wife">
+            <null/>
+        </property>
+        <!--properties-->
+        <property name="info">
+            <props>
+                <prop key="studyID">rs23d42897o4n</prop>
+                <prop key="gender">man</prop>
+            </props>
+        </property>
+
+    </bean>
+</beans>
